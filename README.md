@@ -24,3 +24,6 @@ Solution: Enabled Row Level Security and policies.
 
 ### Problem: Realtime not updating
 Solution: Added Supabase channel listener for postgres_changes.
+
+# Reaaly this one is the Best work I did tuntil now. I had the best experience by doing this there was full of errors, confusion to be frank, I was almost stopped doing this but with the help of ChatGPT I completed this one.
+
