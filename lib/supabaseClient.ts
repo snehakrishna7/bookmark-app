@@ -1,15 +1,15 @@
-import { createClient } from '@supabase/supabase-js'
+import createClient from '@/lib/supabaseClient'
 
-const supabase = createClient(
+export const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 )
 
-const signInWithGoogle = async () => {
+export const signInWithGoogle = async () => {
   const { error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
-      redirectTo: 'http://localhost:3000'
+      redirectTo: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
     }
   })
 
@@ -17,3 +17,4 @@ const signInWithGoogle = async () => {
     console.error('Login error:', error.message)
   }
 }
+
